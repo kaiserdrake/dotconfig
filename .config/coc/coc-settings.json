@@ -1,0 +1,8 @@
+{
+    "suggest.numberSelect": false,
+    "suggest.minTriggerInputLength": 3,
+    "suggest.noselect": false,
+    "diagnostic.displayByAle": true,
+    "diagnostic.virtualText": true,
+    "diagnostic.virtualTextCurrentLineOnly": true
+}

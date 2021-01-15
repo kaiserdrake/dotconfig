@@ -1,0 +1,25 @@
+# Piggyback environment variables used for aliases
+export PRIMARY_WORKSPACE=$HOME/WORKSPACE
+export METACFG_LOCATION=$PRIMARY_WORKSPACE/bokuno/notes
+
+# trash-cli alias
+alias rm='trash-put'
+
+# Docker run default option - mandatory configuration items for all images.
+# This variable is placed in host specific profile due to the dependency
+# on PRIMARY_WORKSPACE environment variable.
+export DOCKER_DEFOPTIONS="--rm -it \
+    --privileged \
+    -e DISPLAY=${DISPLAY} \
+    -e TERM=xterm-256color \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v $HOME/.bash_history:/home/${USER}/.bash_history \
+    -v $HOME/.bashrc:/home/${USER}/.bashrc \
+    -v $HOME/.zshrc:/home/${USER}/.zshrc \
+    -v $HOME/.config:/home/${USER}/.config \
+    -v $HOME/.local:/home/${USER}/.local \
+    -v $HOME/.tmux.conf:/home/${USER}/.tmux.conf \
+    -v $HOME/.ssh:/home/${USER}/.ssh \
+    -v $HOME/.vim:/home/${USER}/.vim \
+    -v $HOME/.vimrc:/home/${USER}/.vimrc \
+    -v $PRIMARY_WORKSPACE:/home/${USER}/WORKSPACE "
