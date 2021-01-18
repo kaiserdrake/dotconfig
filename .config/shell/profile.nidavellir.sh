@@ -15,7 +15,6 @@ export DOCKER_DEFOPTIONS="--rm -it \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v $HOME/.bash_history:/home/${USER}/.bash_history \
     -v $HOME/.bashrc:/home/${USER}/.bashrc \
-    -v $HOME/.zshrc:/home/${USER}/.zshrc \
     -v $HOME/.config:/home/${USER}/.config \
     -v $HOME/.local:/home/${USER}/.local \
     -v $HOME/.tmux.conf:/home/${USER}/.tmux.conf \

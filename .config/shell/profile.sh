@@ -101,17 +101,3 @@ function start_agent() {
         /usr/bin/ssh-add
     fi
 }
-
-# Source SSH settings, if applicable
-if [ -d "$HOME/.ssh" ]; then
-    if [ -f "${SSH_ENV}" ]; then
-        . "${SSH_ENV}" > /dev/null
-        kill -0 $SSH_AGENT_PID 2>/dev/null || {
-            start_agent
-        }
-    else
-        start_agent
-    fi
-fi
-
-

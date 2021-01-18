@@ -14,7 +14,6 @@ export DOCKER_DEFOPTIONS="--rm -it \
     -e TERM=xterm-256color \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v $HOME/.bashrc:/home/${USER}/.bashrc \
-    -v $HOME/.zshrc:/home/${USER}/.zshrc \
     -v $HOME/.config:/home/${USER}/.config \
     -v $HOME/.local:/home/${USER}/.local \
     -v $HOME/.tmux.conf:/home/${USER}/.tmux.conf \
