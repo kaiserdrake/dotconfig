@@ -64,9 +64,9 @@ function docker-run(){
     # Identify image name through selection from the list of images returned by
     # 'docker image ls' command.
     if [ -z "$1" ]; then
-        IMAGENAME=`docker image list | awk '{if(NR>1)print}'| fzf | awk '{print $1}'`
+        IMAGENAME=`docker image list | awk '{if(NR>1)print}'| fzf | awk '{printf "%s:%s\n",$1,$2}'`
     else
-        IMAGENAME=`docker image list | awk '{if(NR>1)print}'| fzf -q $1 -1 -0 | awk '{print $1}'`
+        IMAGENAME=`docker image list | awk '{if(NR>1)print}'| fzf -q $1 -1 -0 | awk '{printf "%s:%s\n",$1,$2}'`
     fi
 
     # Remote registry images results to empty IMAGENAME, user probably pressed

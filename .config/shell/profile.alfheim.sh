@@ -12,6 +12,8 @@ export DOCKER_DEFOPTIONS="--rm -it \
     --privileged \
     -e DISPLAY=${DISPLAY} \
     -e TERM=xterm-256color \
+    -v $SSH_AUTH_SOCK:/ssh-agent \
+    -e SSH_AUTH_SOCK=/ssh-agent \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v $HOME/.bashrc:/home/${USER}/.bashrc \
     -v $HOME/.config:/home/${USER}/.config \
