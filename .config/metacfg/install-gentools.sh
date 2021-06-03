@@ -17,17 +17,9 @@ sudo apt-get --yes install \
     xclip
 
 # FZF
-# fzf is available in some officiak distribution repository.
-# Try to install it from official package repository.
 # Upon failure, download deb package and install it manually.
-sudo apt-get --yes install fzf
-if ! [ -x /usr/bin/fzf ]; then
-    mkdir -p /tmp; pushd /tmp
-    curl -LO http://mirrors.kernel.org/ubuntu/pool/universe/f/fzf/fzf_0.18.0-2_amd64.deb
-    sudo dpkg -i fzf_0.18.0-2_amd64.deb
-    rm fzf_0.18.0-2_amd64.deb
-    popd
-fi
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install --all
 
 # ripgrep
 # ripgrep is available in some officiak distribution repository.

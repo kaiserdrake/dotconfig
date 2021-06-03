@@ -118,3 +118,6 @@ fi
 export PS1="$PS1_PRE$PS1_NOTICE$PS1_POST"
 
 
+
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

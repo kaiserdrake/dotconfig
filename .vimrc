@@ -154,7 +154,7 @@ set number relativenumber         " show relative line number
 set regexpengine=1                " set regex engine to old engine that works with everything
 set ruler                         " always show cursor position
 set scrolloff=3                   " number of lines to keep above and below cursor
-set shell=/bin/zsh                " use bash as default shell
+set shell=/bin/bash               " use bash as default shell
 set shiftwidth=4                  " shiftwidth
 set showcmd                       " show command history
 set showmatch                     " show matching braces
