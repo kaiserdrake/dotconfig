@@ -85,19 +85,3 @@ if ! within_docker; then
         tmux rename-window `generate-name`
     fi
 fi
-
-# -----------------------------------------------------------------------------
-# SSH Agent
-# -----------------------------------------------------------------------------
-# Set up ssh-agent
-SSH_ENV="$HOME/.ssh/environment"
-function start_agent() {
-    touch $SSH_ENV
-    chmod 600 "${SSH_ENV}"
-    /usr/bin/ssh-agent | sed 's/^echo/#echo/' >> "${SSH_ENV}"
-    . "${SSH_ENV}" > /dev/null
-    # defer ssh-add for possibly detached environment
-    if ! within_docker; then
-        /usr/bin/ssh-add
-    fi
-}
